@@ -89,4 +89,12 @@ public class DialogContent extends ParentPage{
         }
         return null;
     }
+    @FindBy(xpath = "(//*[@data-icon='bars'])[1]")
+    public WebElement hamburgerMenu;
+
+    @FindBy(xpath = "//*[contains(text(),'Messaging')]")
+    public WebElement hamburgerMessaging;
+    @FindBy(xpath = "//*[contains(text(),'New Message')]")
+    public WebElement hamburgerNewMessage;
+
 }

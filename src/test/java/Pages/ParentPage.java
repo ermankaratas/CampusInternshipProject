@@ -53,12 +53,20 @@ public class ParentPage {
         wait.until(ExpectedConditions.visibilityOf(element));
         return element.getAttribute("value");
     }
-
+    public String myGetAttribute(WebElement element, String attribute) {
+        wait.until(ExpectedConditions.visibilityOf(element));
+        return element.getAttribute(attribute);
+    }
     public void myVerifyContainsText(WebElement element, String value) {
         wait.until(ExpectedConditions.textToBePresentInElement(element, value));
         //wait.until(ExpectedConditions.visibilityOf(element));
         Assert.assertTrue(element.getText().contains(value));
-        new Actions(GWD.getDriver()).sendKeys(Keys.ESCAPE).build().perform();
+        new Actions(GWD.getDriver()).sendKeys(Keys.ESCAPE).build().perform();  // pop up larda sıkıntı
+    }
+    public void myVerifyContainsTextWithoutEsc(WebElement element, String value) {
+        wait.until(ExpectedConditions.textToBePresentInElement(element, value));
+        //wait.until(ExpectedConditions.visibilityOf(element));
+        Assert.assertTrue(element.getText().contains(value));
     }
 
     public void myVerifyEqualsText(WebElement element, String value) {
@@ -97,8 +105,8 @@ public class ParentPage {
     }
 
     public void myVerifyContainsCurrentUrl(String url) {
-        String currentUrl = GWD.getDriver().getCurrentUrl();
         wait.until(ExpectedConditions.urlContains(url));
+        String currentUrl = GWD.getDriver().getCurrentUrl();
         Assert.assertTrue(currentUrl.contains(url));
     }
 

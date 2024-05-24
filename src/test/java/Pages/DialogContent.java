@@ -61,6 +61,24 @@ public class DialogContent extends ParentPage{
     @FindBy(xpath = "//tbody//tr//td[2]")
     public List<WebElement> nameList;
 
+    @FindBy(xpath = "(//*[@data-icon='bars'])[1]")
+    public WebElement hamburgerMenu;
+
+    @FindBy(xpath = "//*[contains(text(),'Messaging')]")
+    public WebElement hamburgerMessaging;
+    @FindBy(xpath = "//*[contains(text(),'New Message')]")
+    public WebElement hamburgerNewMessage;
+    @FindBy(xpath = "//*[contains(text(),'Trash')]")
+    public WebElement hamburgerTrash;
+    @FindBy(xpath = "//*[@icon='trash-restore']")
+    public WebElement recoveryIcon;
+    @FindBy(xpath = "//ms-delete-button[@table='true']/button")
+    public WebElement garbageIcon;
+    @FindBy(xpath = "//div[contains(text(),'Do you want to delete')]")
+    public WebElement deleteMessage;
+    @FindBy(xpath = "//button[@type='submit']")
+    public WebElement deleteButton;
+
     public void deleteItem(String deleteName){
         mySendKeys(searchInput, deleteName);
         myClick(searchButton);
@@ -86,15 +104,12 @@ public class DialogContent extends ParentPage{
             case "userType" : return this.userType;
             case "student" : return this.student;
             case "administrator" : return this.administrator;
+            case "Trash" : return this.hamburgerTrash;
+            case "trash-restore" : return this.recoveryIcon;
+            case "garbage-box" : return this.garbageIcon;
+            case "Delete" : return this.deleteButton;
         }
         return null;
     }
-    @FindBy(xpath = "(//*[@data-icon='bars'])[1]")
-    public WebElement hamburgerMenu;
-
-    @FindBy(xpath = "//*[contains(text(),'Messaging')]")
-    public WebElement hamburgerMessaging;
-    @FindBy(xpath = "//*[contains(text(),'New Message')]")
-    public WebElement hamburgerNewMessage;
 
 }

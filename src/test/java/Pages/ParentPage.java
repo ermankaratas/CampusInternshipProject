@@ -11,7 +11,11 @@ import org.openqa.selenium.support.ui.Select;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.Assert;
 
+import java.awt.*;
+import java.awt.datatransfer.StringSelection;
 import java.time.Duration;
+import java.time.LocalDate;
+import java.time.format.DateTimeFormatter;
 
 public class ParentPage {
     WebDriverWait wait = new WebDriverWait(GWD.getDriver(), Duration.ofSeconds(20));
@@ -115,5 +119,21 @@ public class ParentPage {
         myScrollToElement(element);
         JavascriptExecutor jse = (JavascriptExecutor) GWD.getDriver();
         jse.executeScript("arguments[0].click();", element);
+    }
+
+    public String getDateAfterDays(int days) {
+        LocalDate today = LocalDate.now();
+        LocalDate futureDate = today.plusDays(days);
+        DateTimeFormatter formatter = DateTimeFormatter.ofPattern("MM/dd/yyyy");
+        return futureDate.format(formatter);
+    }
+    public void myClear(WebElement element){
+        myClick(element);
+        element.sendKeys(Keys.CONTROL + "a");
+        element.sendKeys(Keys.BACK_SPACE);
+    }
+    public void myCopyToClipboard(String filepath){
+        StringSelection copyFilepath = new StringSelection(filepath);
+        Toolkit.getDefaultToolkit().getSystemClipboard().setContents(copyFilepath,null);
     }
 }

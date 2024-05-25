@@ -78,6 +78,38 @@ public class DialogContent extends ParentPage{
     public WebElement deleteMessage;
     @FindBy(xpath = "//button[@type='submit']")
     public WebElement deleteButton;
+    @FindBy(xpath = "//button//*[contains(text(),'Attendance')]")
+    public WebElement attendanceButton;
+    @FindBy(xpath = "//div//*[contains(text(),'ATTENDANCE EXCUSES')]")
+    public WebElement excuseButton;
+    @FindBy(xpath = "(//ms-add-button/button/span)[2]")
+    public WebElement addExcuseButton;
+    @FindBy(xpath = "//span[@class='title dialog-title']")
+    public WebElement dialogTitle;
+    @FindBy(xpath = "//div//*[contains(text(),'Full Day')]")
+    public WebElement dateType;
+    @FindBy(xpath = "(//div//*[contains(text(),'Full Day')])[2]")
+    public WebElement fullDaySelected;
+    @FindBy(xpath = "//div//*[contains(text(),'Date Range')]")
+    public WebElement dateRangeSelected;
+    @FindBy(xpath = "//input[@formcontrolname='date']")
+    public WebElement date;
+    @FindBy(xpath = "//input[@formcontrolname='startDate']")
+    public WebElement startDate;
+    @FindBy(xpath = "//input[@formcontrolname='endDate']")
+    public WebElement endDate;
+    @FindBy(css = "textarea")
+    public WebElement excuseMessage;
+    @FindBy(xpath = "//button[@role='menuitem']")
+    public WebElement attachButton;
+    @FindBy(xpath = "//button//*[contains(text(),'From My Files')]")
+    public WebElement fromMyFiles;
+    @FindBy(xpath = "//button//*[contains(text(),'From Local')]")
+    public WebElement fromLocal;
+    @FindBy(xpath = "//button//*[contains(text(),'From Google Drive')]")
+    public WebElement fromDrive;
+    @FindBy(xpath = "//button//*[contains(text(),'Send')]")
+    public WebElement sendButton;
 
     public void deleteItem(String deleteName){
         mySendKeys(searchInput, deleteName);
@@ -108,6 +140,17 @@ public class DialogContent extends ParentPage{
             case "trash-restore" : return this.recoveryIcon;
             case "garbage-box" : return this.garbageIcon;
             case "Delete" : return this.deleteButton;
+            case "Attendance" : return this.attendanceButton;
+            case "Attendance Excuses" : return this.excuseButton;
+            case "Add Attendance Excuse" : return this.addExcuseButton;
+            case "Date Type" : return this.dateType;
+            case "Full Day" : return this.fullDaySelected;
+            case "Date Range" : return this.dateRangeSelected;
+            case "Attach Files" : return this.attachButton;
+            case "From Local" : return this.fromLocal;
+            case "From My Files" : return this.fromMyFiles;
+            case "From Google Drive" : return this.fromDrive;
+            case "Send" : return this.sendButton;
         }
         return null;
     }

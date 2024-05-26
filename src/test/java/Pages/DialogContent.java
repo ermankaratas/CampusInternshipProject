@@ -68,6 +68,8 @@ public class DialogContent extends ParentPage{
     public WebElement hamburgerMessaging;
     @FindBy(xpath = "//*[contains(text(),'New Message')]")
     public WebElement hamburgerNewMessage;
+    @FindBy(xpath = "//*[contains(text(),'Calendar')]")
+    public WebElement calendarMenu;
     @FindBy(xpath = "//*[contains(text(),'Trash')]")
     public WebElement hamburgerTrash;
     @FindBy(xpath = "//*[@icon='trash-restore']")
@@ -110,6 +112,68 @@ public class DialogContent extends ParentPage{
     public WebElement fromDrive;
     @FindBy(xpath = "//button//*[contains(text(),'Send')]")
     public WebElement sendButton;
+    @FindBy(xpath = "//div/h4/strong")
+    public WebElement weekDate;
+    @FindBy(xpath = "(//ms-browse//div[@class='ng-star-inserted']/div[@class='ng-star-inserted'])[1]")
+    public WebElement pIcon;
+    @FindBy(xpath = "(//ms-browse//div[@class='ng-star-inserted']/div[@class='ng-star-inserted'])[2]")
+    public WebElement sIcon;
+    @FindBy(xpath = "(//ms-browse//div[@class='ng-star-inserted']/div[@class='ng-star-inserted'])[3]")
+    public WebElement eIcon;
+    @FindBy(xpath = "(//ms-browse//div[@class='ng-star-inserted']/div[@class='ng-star-inserted'])[4]")
+    public WebElement cIcon;
+    @FindBy(xpath = "(//*[contains(text(),'Calendar')])[4]")
+    public WebElement calendarButton;
+    @FindBy(xpath = "//button[@title='Google Calendar']")
+    public WebElement googleCalendar;
+    @FindBy(xpath = "//*[contains(text(),'Weekly')]")
+    public WebElement weeklyPlan;
+    @FindBy(xpath = "(//button[@mat-icon-button]/span[@class='mat-mdc-focus-indicator'])[4]")
+    public WebElement backwardIcon;
+    @FindBy(xpath = "(//button[@mat-icon-button]/span[@class='mat-mdc-focus-indicator'])[6]")
+    public WebElement forwardIcon;
+    @FindBy(xpath = "(//button[@mat-icon-button]/span[@class='mat-mdc-focus-indicator'])[5]")
+    public WebElement todayIcon;
+    @FindBy(xpath = "(//td[@class='column100 column1 details ng-star-inserted'])[1]")
+    public WebElement lesson1;
+    @FindBy(xpath = "(//td[@class='column100 column1 details ng-star-inserted'])[2]")
+    public WebElement lesson2;
+    @FindBy(xpath = "(//td[@class='column100 column1 details ng-star-inserted'])[3]")
+    public WebElement lesson3;
+    @FindBy(xpath = "(//td[@class='column100 column1 details ng-star-inserted'])[4]")
+    public WebElement lesson4;
+    @FindBy(xpath = "(//td[@class='column100 column1 details ng-star-inserted'])[5]")
+    public WebElement lesson5;
+    @FindBy(xpath = "(//td[@class='column100 column1 details ng-star-inserted'])[6]")
+    public WebElement lesson6;
+    @FindBy(xpath = "(//td[@class='column100 column1 details ng-star-inserted'])[7]")
+    public WebElement lesson7;
+    @FindBy(xpath = "(//td[@class='column100 column1 details ng-star-inserted'])[8]")
+    public WebElement lesson8;
+    @FindBy(xpath = "(//td[@class='column100 column1 details ng-star-inserted'])[9]")
+    public WebElement lesson9;
+    @FindBy(xpath = "(//td[@class='column100 column1 details ng-star-inserted'])[10]")
+    public WebElement lesson10;
+    @FindBy(xpath = "(//td[@class='column100 column1 details ng-star-inserted'])[11]")
+    public WebElement lesson11;
+    @FindBy(xpath = "(//td[@class='column100 column1 details ng-star-inserted'])[12]")
+    public WebElement lesson12;
+    @FindBy(xpath = "(//td[@class='column100 column1 details ng-star-inserted'])[13]")
+    public WebElement lesson13;
+    @FindBy(xpath = "(//td[@class='column100 column1 details ng-star-inserted'])[14]")
+    public WebElement lesson14;
+    @FindBy(xpath = "(//td[@class='column100 column1 details ng-star-inserted'])[15]")
+    public WebElement lesson15;
+    @FindBy(xpath = "(//td[@class='column100 column1 details ng-star-inserted'])[16]")
+    public WebElement lesson16;
+    @FindBy(xpath = "(//td[@class='column100 column1 details ng-star-inserted'])[17]")
+    public WebElement lesson17;
+    @FindBy(xpath = "(//td[@class='column100 column1 details ng-star-inserted'])[18]")
+    public WebElement lesson18;
+    @FindBy(xpath = "(//td[@class='column100 column1 details ng-star-inserted'])[19]")
+    public WebElement lesson19;
+    @FindBy(xpath = "(//td[@class='column100 column1 details ng-star-inserted'])[20]")
+    public WebElement lesson20;
 
     public void deleteItem(String deleteName){
         mySendKeys(searchInput, deleteName);
@@ -151,6 +215,37 @@ public class DialogContent extends ParentPage{
             case "From My Files" : return this.fromMyFiles;
             case "From Google Drive" : return this.fromDrive;
             case "Send" : return this.sendButton;
+            case "Calendar" : return this.calendarMenu;
+            case "P" : return this.pIcon;
+            case "C" : return this.cIcon;
+            case "E" : return this.eIcon;
+            case "S" : return this.sIcon;
+            case "calendarBtn" : return this.calendarButton;
+            case "Weekly Course Plan" : return this.weeklyPlan;
+            case "Backward" : return this.backwardIcon;
+            case "Forward" : return this.forwardIcon;
+            case "Today" : return this.todayIcon;
+            case "1" : return this.lesson1;
+            case "2" : return this.lesson2;
+            case "3" : return this.lesson3;
+            case "4" : return this.lesson4;
+            case "5" : return this.lesson5;
+            case "6" : return this.lesson6;
+            case "7" : return this.lesson7;
+            case "8" : return this.lesson8;
+            case "9" : return this.lesson9;
+            case "10" : return this.lesson10;
+            case "11" : return this.lesson11;
+            case "12" : return this.lesson12;
+            case "13" : return this.lesson13;
+            case "14" : return this.lesson14;
+            case "15" : return this.lesson15;
+            case "16" : return this.lesson16;
+            case "17" : return this.lesson17;
+            case "18" : return this.lesson18;
+            case "19" : return this.lesson19;
+            case "20" : return this.lesson20;
+
         }
         return null;
     }

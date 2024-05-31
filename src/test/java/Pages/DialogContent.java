@@ -175,6 +175,9 @@ public class DialogContent extends ParentPage{
     @FindBy(xpath = "(//td[@class='column100 column1 details ng-star-inserted'])[20]")
     public WebElement lesson20;
 
+    @FindBy(xpath = "//div[@class='ng-star-inserted']/img")
+    public WebElement CompanyLogo;
+
     public void deleteItem(String deleteName){
         mySendKeys(searchInput, deleteName);
         myClick(searchButton);
@@ -245,6 +248,7 @@ public class DialogContent extends ParentPage{
             case "18" : return this.lesson18;
             case "19" : return this.lesson19;
             case "20" : return this.lesson20;
+            case "CompanyLogo" :return this.CompanyLogo;
 
         }
         return null;

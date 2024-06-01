@@ -83,6 +83,16 @@ public class DialogContent extends ParentPage {
     public WebElement threePointMenu;
     @FindBy(xpath = "//*[text()=' Excel Export ']")
     public WebElement excelReport;
+    @FindBy(xpath = "//*[@data-icon='angle-down']")
+    public WebElement profileSettings;
+    @FindBy(xpath = "//span[text()='Settings']")
+    public WebElement settings;
+    @FindBy(css = "[formcontrolname='theme'] svg")
+    public WebElement arrowButton;
+    @FindBy(xpath = "//span[@class='mdc-list-item__primary-text']")
+    public List<WebElement> themeList;
+    @FindBy(xpath = "//*[@value='indigo-theme']")
+    public WebElement indigoTheme;
     @FindBy(xpath = "//*[@icon='trash-restore']")
     public WebElement recoveryIcon;
     @FindBy(xpath = "//ms-delete-button[@table='true']/button")
@@ -333,6 +343,16 @@ public class DialogContent extends ParentPage {
                 return this.threePointMenu;
             case "excelReport":
                 return this.excelReport;
+            case "profileSettings":
+                return this.profileSettings;
+            case "settings":
+                return this.settings;
+            case "arrowButton":
+                return this.arrowButton;
+            case "indigoTheme":
+                return this.indigoTheme;
+            case "saveButton":
+                return this.saveButton;
         }
 
         return null;

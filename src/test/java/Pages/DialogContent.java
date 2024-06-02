@@ -230,6 +230,9 @@ public class DialogContent extends ParentPage{
     @FindBy(xpath = "//*[contains(text(),'Calendar')]")
     public WebElement CalendarMenu;
 
+    @FindBy(xpath = "//span[text()=' Student_9 11A']")
+    public WebElement studentName;
+
     public void deleteItem(String deleteName) {
         mySendKeys(searchInput, deleteName);
         myClick(searchButton);

@@ -4,6 +4,7 @@ import Pages.DialogContent;
 import io.cucumber.datatable.DataTable;
 import io.cucumber.java.en.And;
 import io.cucumber.java.en.Given;
+import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.ExpectedConditions;
@@ -29,5 +30,10 @@ public class _12_Finance {
         dc.myHover(dc.hamburgerFinance);
         dc.wait.until(ExpectedConditions.elementToBeClickable(dc.hamburgerMyFinance));
         dc.myClick(dc.hamburgerMyFinance);
+    }
+
+    @Then("User should see My Finance page successfully")
+    public void userShouldSeeMyFinancePageSuccessfully() {
+        dc.myVerifyContainsText(dc.studentName,"Student_9 11A");
     }
 }

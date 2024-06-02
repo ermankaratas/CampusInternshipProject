@@ -6,7 +6,8 @@ Feature:Finance
     Then User should login successfully
 
 
-  Scenario:    Given User hover over to the Finance link at the Hamburger menu on the homepage
+  Scenario:
+    Given User hover over to the Finance link at the Hamburger menu on the homepage
     When User click MyFinance button
     Then User should see the Students Fees page successfully
     When User click Username line

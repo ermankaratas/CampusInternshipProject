@@ -41,6 +41,7 @@ public class CalendarCoursePlanSteps {
 
     @Then("User should see the {string} page")
     public void userShouldSeeThePage(String calendar) {
+
         dc.myVerifyContainsText(dc.googleCalendar, calendar);
     }
 

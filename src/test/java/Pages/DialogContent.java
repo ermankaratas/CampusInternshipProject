@@ -10,8 +10,8 @@ import java.util.List;
 
 public class DialogContent extends ParentPage{
     public DialogContent() {
-        PageFactory.initElements(GWD.getDriver(), this);
-    }
+    PageFactory.initElements(GWD.getDriver(), this);
+}
     @FindBy(css = "[formcontrolname='username']")
     public WebElement username;
     @FindBy(css = "input[formcontrolname='password']")
@@ -198,11 +198,43 @@ public class DialogContent extends ParentPage{
     @FindBy(xpath = "//div[@class='ng-star-inserted']/img")
     public WebElement CompanyLogo;
 
+
+    @FindBy(xpath = "//*[contains(text(),'Students Fees')]")
+    public WebElement StudentFees;
+
+    @FindBy(xpath = "//*[contains(text(),'Student ID')]")
+    public WebElement StudentLine;
+
+    @FindBy(xpath = "//*[contains(text(),'Fee/Balance Detail')]")
+    public WebElement FeeBalanceDetail;
+
+    @FindBy(xpath = "//*[contains(text(),'Date')]")
+    public WebElement FinanceTable;
+    @FindBy(xpath="//*[contains(text(),'BIOLOGY')]")
+    public WebElement biology;
+
+    @FindBy(xpath = "//div[@id='cdk-overlay-9']")
+    public WebElement DialogPage;
+    @FindBy (xpath = "//span[@class='fc-icon fc-icon-chevron-left']")
+    public WebElement leftButton;
+
+    @FindBy(xpath = "//*[contains(text(),'0')]")
+    public WebElement pubLesson;
+
+    @FindBy(xpath = "//*[contains(text(),'Recording')]")
+    public WebElement Recordingbutton;
+
+    @FindBy(xpath = "//*[contains(text(),'Play Video')]")
+    public WebElement Playvideo;
+
+    @FindBy(xpath = "//*[contains(text(),'Calendar')]")
+    public WebElement CalendarMenu;
+
     public void deleteItem(String deleteName) {
         mySendKeys(searchInput, deleteName);
         myClick(searchButton);
 
-        //search butonun tıklanabilir olana kadar bekle
+        //search butonun tÄ±klanabilir olana kadar bekle
         wait.until(ExpectedConditions.elementToBeClickable(searchButton));
 
         myClick(deleteImageBtn);

@@ -1,9 +1,7 @@
 package StepDefinitions;
 
 import Pages.DialogContent;
-import io.cucumber.java.en.And;
-import io.cucumber.java.en.Then;
-import io.cucumber.java.en.When;
+import io.cucumber.java.en.*;
 import org.testng.Assert;
 
 public class TrashSteps {
@@ -11,7 +9,7 @@ public class TrashSteps {
 
     @Then("User should see the {string} menu")
     public void userShouldSeeTheMenu(String menuName) {
-        dc.myVerifyContainsTextWithoutEsc(dc.getWebElement(menuName),menuName);
+        dc.myVerifyContainsTextWithoutEsc(dc.getWebElement(menuName), menuName);
         //dc.myClick(dc.hamburgerMessaging);
     }
 
@@ -27,7 +25,7 @@ public class TrashSteps {
 
     @And("User should see the {string} icon on the page")
     public void userShouldSeeTheIconOnThePage(String iconName) {
-        Assert.assertTrue(dc.myGetAttribute(dc.getWebElement(iconName),"icon").contains(iconName));
+        Assert.assertTrue(dc.myGetAttribute(dc.getWebElement(iconName), "icon").contains(iconName));
     }
 
     @When("User clicks on the {string} icon")

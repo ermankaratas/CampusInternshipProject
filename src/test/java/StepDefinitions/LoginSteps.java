@@ -2,9 +2,7 @@ package StepDefinitions;
 
 import Pages.DialogContent;
 import Utilities.GWD;
-import io.cucumber.java.en.Given;
-import io.cucumber.java.en.Then;
-import io.cucumber.java.en.When;
+import io.cucumber.java.en.*;
 
 public class LoginSteps {
     DialogContent dc = new DialogContent();
@@ -16,13 +14,13 @@ public class LoginSteps {
 
     @When("Enter username and password and click login button")
     public void enterUsernameAndPasswordAndClickLoginButton() {
-        dc.mySendKeys(dc.username,"Student_9");
-        dc.mySendKeys(dc.password,"S12345");
+        dc.mySendKeys(dc.username, "Student_9");
+        dc.mySendKeys(dc.password, "S12345");
         dc.myClick(dc.loginButton);
     }
 
     @Then("User should login successfully")
     public void userShouldLoginSuccessfully() {
-        dc.myVerifyContainsText(dc.headText,"Internship");
+        dc.myVerifyContainsText(dc.headText, "Internship");
     }
 }

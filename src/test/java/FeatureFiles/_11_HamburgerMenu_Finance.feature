@@ -4,6 +4,7 @@ Feature: Finance functionality
     Given Navigate to Campus
     When Enter username and password and click login button
     Then User should login successfully
+
   Scenario: User should be able to make the payment amount of $235 using Stripe Infrastructure
     Given Click on the Element in Dialog Content
       | hamburgerMenu |

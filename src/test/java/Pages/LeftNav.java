@@ -2,13 +2,13 @@ package Pages;
 
 import Utilities.GWD;
 import org.openqa.selenium.WebElement;
-import org.openqa.selenium.support.FindBy;
-import org.openqa.selenium.support.PageFactory;
+import org.openqa.selenium.support.*;
 
 public class LeftNav {
-    public LeftNav(){
-        PageFactory.initElements(GWD.getDriver(),this);
+    public LeftNav() {
+        PageFactory.initElements(GWD.getDriver(), this);
     }
+
     @FindBy(xpath = "(//span[text()='Setup'])[1]")
     public WebElement setup;
     @FindBy(xpath = "//span[text()='Parameters']")
@@ -34,19 +34,29 @@ public class LeftNav {
     @FindBy(xpath = "//span[text()='States']")
     public WebElement states;
 
-    public WebElement getWebElement(String strElement){
+    public WebElement getWebElement(String strElement) {
 
-        switch (strElement){
-            case "setup" : return this.setup;
-            case "parameters" : return this.parameters;
-            case "countries" : return this.countries;
-            case "citizenship" : return this.citizenship;
-            case "nationalities" : return this.nationalities;
-            case "fees" : return this.fees;
-            case "inventory" : return this.inventory;
-            case "setupInventory" : return this.setupInventory;
-            case "inventoryCat" : return this.inventoryCat;
-            case "states" : return this.states;
+        switch (strElement) {
+            case "setup":
+                return this.setup;
+            case "parameters":
+                return this.parameters;
+            case "countries":
+                return this.countries;
+            case "citizenship":
+                return this.citizenship;
+            case "nationalities":
+                return this.nationalities;
+            case "fees":
+                return this.fees;
+            case "inventory":
+                return this.inventory;
+            case "setupInventory":
+                return this.setupInventory;
+            case "inventoryCat":
+                return this.inventoryCat;
+            case "states":
+                return this.states;
         }
         return null;
     }

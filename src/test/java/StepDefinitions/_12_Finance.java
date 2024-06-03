@@ -2,10 +2,7 @@ package StepDefinitions;
 
 import Pages.DialogContent;
 import io.cucumber.datatable.DataTable;
-import io.cucumber.java.en.And;
-import io.cucumber.java.en.Given;
-import io.cucumber.java.en.Then;
-import io.cucumber.java.en.When;
+import io.cucumber.java.en.*;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 
@@ -34,6 +31,6 @@ public class _12_Finance {
 
     @Then("User should see My Finance page successfully")
     public void userShouldSeeMyFinancePageSuccessfully() {
-        dc.myVerifyContainsText(dc.studentName,"Student_9 11A");
+        dc.myVerifyContainsText(dc.studentName, "Student_9 11A");
     }
 }

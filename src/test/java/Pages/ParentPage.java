@@ -1,20 +1,14 @@
 package Pages;
 
 import Utilities.GWD;
-import org.openqa.selenium.JavascriptExecutor;
-import org.openqa.selenium.Keys;
-import org.openqa.selenium.WebElement;
-import org.openqa.selenium.interactions.Action;
-import org.openqa.selenium.interactions.Actions;
-import org.openqa.selenium.support.ui.ExpectedConditions;
-import org.openqa.selenium.support.ui.Select;
-import org.openqa.selenium.support.ui.WebDriverWait;
+import org.openqa.selenium.*;
+import org.openqa.selenium.interactions.*;
+import org.openqa.selenium.support.ui.*;
 import org.testng.Assert;
 
 import java.awt.*;
 import java.awt.datatransfer.StringSelection;
-import java.time.Duration;
-import java.time.LocalDate;
+import java.time.*;
 import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
 import java.util.List;
@@ -59,16 +53,19 @@ public class ParentPage {
         wait.until(ExpectedConditions.visibilityOf(element));
         return element.getAttribute("value");
     }
+
     public String myGetAttribute(WebElement element, String attribute) {
         wait.until(ExpectedConditions.visibilityOf(element));
         return element.getAttribute(attribute);
     }
+
     public void myVerifyContainsText(WebElement element, String value) {
         wait.until(ExpectedConditions.textToBePresentInElement(element, value));
         //wait.until(ExpectedConditions.visibilityOf(element));
         Assert.assertTrue(element.getText().contains(value));
         new Actions(GWD.getDriver()).sendKeys(Keys.ESCAPE).build().perform();  // pop up larda sıkıntı
     }
+
     public void myVerifyContainsTextWithoutEsc(WebElement element, String value) {
         wait.until(ExpectedConditions.textToBePresentInElement(element, value));
         //wait.until(ExpectedConditions.visibilityOf(element));
@@ -129,22 +126,24 @@ public class ParentPage {
         DateTimeFormatter formatter = DateTimeFormatter.ofPattern("MM/dd/yyyy");
         return futureDate.format(formatter);
     }
-    public void myClear(WebElement element){
+
+    public void myClear(WebElement element) {
         myClick(element);
         element.sendKeys(Keys.CONTROL + "a");
         element.sendKeys(Keys.BACK_SPACE);
     }
-    public void myCopyToClipboard(String filepath){
+
+    public void myCopyToClipboard(String filepath) {
         StringSelection copyFilepath = new StringSelection(filepath);
-        Toolkit.getDefaultToolkit().getSystemClipboard().setContents(copyFilepath,null);
+        Toolkit.getDefaultToolkit().getSystemClipboard().setContents(copyFilepath, null);
     }
 
-   public void verifyMenuItems(List<WebElement> elementList, List<String> stringList){
+    public void verifyMenuItems(List<WebElement> elementList, List<String> stringList) {
         List<String> actualMenuTexts = new ArrayList<>();
-        for (WebElement menuItem : elementList){
+        for (WebElement menuItem : elementList) {
             actualMenuTexts.add(menuItem.getText());
         }
-        Assert.assertEquals(actualMenuTexts,stringList);
+        Assert.assertEquals(actualMenuTexts, stringList);
     }
 
     public void myDisplay(WebElement element) {

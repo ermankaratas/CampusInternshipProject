@@ -7,9 +7,8 @@ Feature: Play functionality
     Then  User should login successfully
 
 
-
   Scenario: As a student, I should  be able watch video on the Calendar page.
-Given As a Student  click CalendarMenu Button and Calendar
-When Student click previous button
-Then Student click on a ended course
-And Click to Recording Button and click Starting
+    Given As a Student  click CalendarMenu Button and Calendar
+    When Student click previous button
+    Then Student click on a ended course
+    And Click to Recording Button and click Starting

@@ -1,9 +1,7 @@
 package StepDefinitions;
 
 import Pages.DialogContent;
-import io.cucumber.java.en.Given;
-import io.cucumber.java.en.Then;
-import io.cucumber.java.en.When;
+import io.cucumber.java.en.*;
 
 public class _24_Calendar {
 
@@ -22,16 +20,15 @@ public class _24_Calendar {
         dc.myWait(2);
         dc.myClick(dc.biology);
 
-        dc.myVerifyContainsText(dc.biology,"Biology");
+        dc.myVerifyContainsText(dc.biology, "Biology");
 
     }
-
 
 
     @Then("Student click on a course that is not published and verify teacher name information")
     public void studentClickOnACourseThatIsNotPublishedAndVerifyTeacherNameInformation() {
 
-        dc.myVerifyContainsText(dc.DialogPage,"Teacher");
+        dc.myVerifyContainsText(dc.DialogPage, "Teacher");
     }
 
 

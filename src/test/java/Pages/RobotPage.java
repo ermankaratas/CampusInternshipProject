@@ -1,12 +1,11 @@
 package Pages;
 
 import java.awt.*;
-import java.awt.event.InputEvent;
-import java.awt.event.KeyEvent;
+import java.awt.event.*;
 
 
 public class RobotPage extends ParentPage {
-        public Robot robot;
+    public Robot robot;
 
     public RobotPage(Robot robot) {
         try {

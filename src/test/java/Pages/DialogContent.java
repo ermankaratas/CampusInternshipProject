@@ -234,6 +234,16 @@ public class DialogContent extends ParentPage{
     public WebElement StripePaymentsButton;
     @FindBy(xpath = "//span[text()=' Student_9 11A']")
     public WebElement studentName;
+    @FindBy (xpath = "//*[contains(text(),'Assignments')]")
+    public WebElement assignments;
+    @FindBy (xpath = "//mat-tooltip-component/div/div")
+    public WebElement numberOfAssignments;
+    @FindBy(xpath = "//mat-select[@id='mat-select-4']")
+    public WebElement semester;
+    @FindBy(xpath = "//mat-option[@value='all']")
+    public WebElement allOption;
+    @FindBy(xpath = "//fa-icon[@matsuffix]")
+    public List<WebElement> assignmentsRow;
 
     public void deleteItem(String deleteName) {
         mySendKeys(searchInput, deleteName);
@@ -310,7 +320,7 @@ public class DialogContent extends ParentPage{
             case "StripeButton":return  this.StripeButton;
             case "payRadio":return  this.payRadio;
             case "payinFullRadio":return  this.payinFullRadio;
-
+            case "Assignments" : return this.assignments;
         }
         return null;
     }

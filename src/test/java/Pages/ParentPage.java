@@ -146,4 +146,8 @@ public class ParentPage {
         }
         Assert.assertEquals(actualMenuTexts,stringList);
     }
+
+    public void myDisplay(WebElement element) {
+        Assert.assertTrue(element.isDisplayed(), "Notification could not be displayed!");
+    }
 }

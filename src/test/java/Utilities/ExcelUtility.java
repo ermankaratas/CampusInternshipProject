@@ -1,7 +1,7 @@
 package Utilities;
+
 import org.apache.poi.ss.usermodel.*;
-import org.apache.poi.xssf.usermodel.XSSFSheet;
-import org.apache.poi.xssf.usermodel.XSSFWorkbook;
+import org.apache.poi.xssf.usermodel.*;
 
 import java.io.File;
 import java.io.FileInputStream;
@@ -15,25 +15,25 @@ public class ExcelUtility {
             FileInputStream inputStream = new FileInputStream(path);
             Workbook workbook = WorkbookFactory.create(inputStream);
             sheet = workbook.getSheet(sheetName);
-        }
-        catch (Exception ex){
+        } catch (Exception ex) {
             System.out.println(ex.getMessage());
         }
         ArrayList<ArrayList<String>> table = new ArrayList<>();
 
-        for (int i = 0; i <sheet.getPhysicalNumberOfRows(); i++) {
+        for (int i = 0; i < sheet.getPhysicalNumberOfRows(); i++) {
             ArrayList<String> row = new ArrayList<>();
             for (int j = 0; j < columnNumber; j++) {
-                row.add(sheet.getRow(i).getCell(j).toString() );
+                row.add(sheet.getRow(i).getCell(j).toString());
             }
             table.add(row);
         }
         return table;
     }
-    public static void writeToExcel(String path, String testResult){
+
+    public static void writeToExcel(String path, String testResult) {
         File file = new File(path);
 
-        if (!file.exists()){
+        if (!file.exists()) {
             XSSFWorkbook workbook = new XSSFWorkbook();
             XSSFSheet sheet = workbook.createSheet("Scenarios");
 
@@ -41,36 +41,36 @@ public class ExcelUtility {
             Cell cell = row.createCell(0);
             cell.setCellValue(testResult);
 
-            try{
+            try {
                 FileOutputStream outputStream = new FileOutputStream(path);
                 workbook.write(outputStream);
                 workbook.close();
                 outputStream.close();
-            }catch (Exception ex){
+            } catch (Exception ex) {
                 System.out.println(ex.getMessage());
             }
-        }else{
+        } else {
             FileInputStream inputStream = null;
             Workbook workbook = null;
             Sheet sheet = null;
-            try{
+            try {
                 inputStream = new FileInputStream(path);
                 workbook = WorkbookFactory.create(inputStream);
                 sheet = workbook.getSheetAt(0);
-            }catch (Exception ex){
+            } catch (Exception ex) {
                 System.out.println(ex.getMessage());
             }
             Row row = sheet.createRow(sheet.getPhysicalNumberOfRows());
             Cell cell = row.createCell(0);
             cell.setCellValue(testResult);
 
-            try{
+            try {
                 inputStream.close();
                 FileOutputStream outputStream = new FileOutputStream(path);
                 workbook.write(outputStream);
                 workbook.close();
                 outputStream.close();
-            }catch (Exception ex){
+            } catch (Exception ex) {
                 System.out.println(ex.getMessage());
             }
         }

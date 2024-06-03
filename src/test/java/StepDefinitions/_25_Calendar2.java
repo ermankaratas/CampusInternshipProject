@@ -1,14 +1,12 @@
 package StepDefinitions;
 
 import Pages.DialogContent;
-import io.cucumber.java.en.And;
-import io.cucumber.java.en.Given;
-import io.cucumber.java.en.Then;
-import io.cucumber.java.en.When;
+import io.cucumber.java.en.*;
 
 public class _25_Calendar2 {
 
-    DialogContent dc=new DialogContent();
+    DialogContent dc = new DialogContent();
+
     @Given("As a Student  click CalendarMenu Button and Calendar")
     public void asAStudentClickCalendarMenuButtonAndCalendar() {
         dc.myClick(dc.CalendarMenu);

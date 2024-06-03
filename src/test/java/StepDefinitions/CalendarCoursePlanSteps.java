@@ -2,18 +2,16 @@ package StepDefinitions;
 
 import Pages.DialogContent;
 import io.cucumber.datatable.DataTable;
-import io.cucumber.java.en.And;
-import io.cucumber.java.en.Then;
-import io.cucumber.java.en.When;
+import io.cucumber.java.en.*;
 import org.testng.Assert;
 
 import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
-import java.util.List;
-import java.util.Locale;
+import java.util.*;
 
 public class CalendarCoursePlanSteps {
     DialogContent dc = new DialogContent();
+
     @Then("User should see the todays Weekly Course Plan")
     public void userShouldSeeTheTodaysWeeklyCoursePlan() {
         dc.myWait(2);
@@ -22,11 +20,11 @@ public class CalendarCoursePlanSteps {
         String startDateStr = dateRangeText.split(" ")[0] + " " +
                 dateRangeText.split(" ")[1].substring(0, 3) + " " + currentYear;
         DateTimeFormatter formatter = DateTimeFormatter.ofPattern("d MMM yyyy", Locale.ENGLISH);
-        LocalDate startDate = LocalDate.parse(startDateStr,formatter);
+        LocalDate startDate = LocalDate.parse(startDateStr, formatter);
         LocalDate endDate = startDate.plusDays(6);
         LocalDate today = LocalDate.now();
         Assert.assertFalse((today.isBefore(startDate) && today.isAfter(endDate)));
-     }
+    }
 
     @And("User should see icons meanings")
     public void userShouldSeeIconsMeanings(DataTable icons) {
@@ -60,9 +58,9 @@ public class CalendarCoursePlanSteps {
         String startDateStr = dateRangeText.split(" ")[0] + " " +
                 dateRangeText.split(" ")[1].substring(0, 3) + " " + currentYear;
         DateTimeFormatter formatter = DateTimeFormatter.ofPattern("d MMM yyyy", Locale.ENGLISH);
-        LocalDate startDate = LocalDate.parse(startDateStr,formatter);
+        LocalDate startDate = LocalDate.parse(startDateStr, formatter);
         LocalDate today = LocalDate.now();
-        if(direction.equals("forward"))
+        if (direction.equals("forward"))
             Assert.assertTrue((today.isBefore(startDate)));
         else
             Assert.assertTrue((today.isAfter(startDate)));

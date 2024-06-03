@@ -1,10 +1,7 @@
 package StepDefinitions;
 
 import Pages.DialogContent;
-import io.cucumber.java.en.And;
-import io.cucumber.java.en.Given;
-import io.cucumber.java.en.Then;
-import io.cucumber.java.en.When;
+import io.cucumber.java.en.*;
 import org.openqa.selenium.Keys;
 
 import java.awt.*;
@@ -13,9 +10,10 @@ import java.awt.event.KeyEvent;
 
 public class AttendanceSteps {
     DialogContent dc = new DialogContent();
+
     @Then("User should see {string} pop-up window")
     public void userShouldSeePopUpWindow(String title) {
-        dc.myVerifyContainsTextWithoutEsc(dc.dialogTitle,title);
+        dc.myVerifyContainsTextWithoutEsc(dc.dialogTitle, title);
     }
 
     @Given("User choose {string} and select {string}")
@@ -47,7 +45,7 @@ public class AttendanceSteps {
     }
 
     @And("User enters the file path: {string} to the computer")
-    public void userEntersTheFilePathToTheComputer(String filename) throws AWTException{
+    public void userEntersTheFilePathToTheComputer(String filename) throws AWTException {
         Robot robot = new Robot();
 
         dc.myWait(1);

@@ -1,18 +1,15 @@
 package StepDefinitions;
 
-import Pages.DialogContent;
-import Pages.TopNav;
-import io.cucumber.java.en.Then;
-import io.cucumber.java.en.When;
+import Pages.*;
+import io.cucumber.java.en.*;
 
-import java.util.Arrays;
-import java.util.List;
+import java.util.*;
 
 public class _03_TOPButtonHome {
     DialogContent dc = new DialogContent();
-    TopNav tn=new TopNav();
-    
-    
+    TopNav tn = new TopNav();
+
+
     @When("Click Coures Button")
     public void clickCouresButton() {
         dc.myClick(tn.coursesButton);
@@ -72,7 +69,7 @@ public class _03_TOPButtonHome {
     public void shouldSeeMessagingFinanceEducationVideoConferenceSurveyd() {
         List<String> stringList = Arrays.asList("Messaging", "Finance", "Education", "Video Conference", "Surveys");
         dc.myClick(tn.hamburgerMenu);
-       dc.verifyMenuItems(tn.hamburgMenuList, stringList);
+        dc.verifyMenuItems(tn.hamburgMenuList, stringList);
     }
 
     @When("Click Chats button")
@@ -104,7 +101,7 @@ public class _03_TOPButtonHome {
 
     @Then("Should see My Certificates,My Files,Change Password,Settings,Sign Out")
     public void shouldSeeMyCertificatesMyFilesChangePasswordSettingsSignOut() {
-        List<String> stringList = Arrays.asList("My Certificates","My Files","Change Password","Settings","Sign Out");
-        dc.verifyMenuItems(tn.profileButtonList,stringList);
+        List<String> stringList = Arrays.asList("My Certificates", "My Files", "Change Password", "Settings", "Sign Out");
+        dc.verifyMenuItems(tn.profileButtonList, stringList);
     }
 }

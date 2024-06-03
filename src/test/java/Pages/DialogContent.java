@@ -2,16 +2,16 @@ package Pages;
 
 import Utilities.GWD;
 import org.openqa.selenium.WebElement;
-import org.openqa.selenium.support.FindBy;
-import org.openqa.selenium.support.PageFactory;
+import org.openqa.selenium.support.*;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 
 import java.util.List;
 
-public class DialogContent extends ParentPage{
+public class DialogContent extends ParentPage {
     public DialogContent() {
-    PageFactory.initElements(GWD.getDriver(), this);
-}
+        PageFactory.initElements(GWD.getDriver(), this);
+    }
+
     @FindBy(css = "[formcontrolname='username']")
     public WebElement username;
     @FindBy(css = "input[formcontrolname='password']")
@@ -198,11 +198,11 @@ public class DialogContent extends ParentPage{
     public WebElement FeeBalanceDetail;
     @FindBy(xpath = "//*[contains(text(),'Date')]")
     public WebElement FinanceTable;
-    @FindBy(xpath="//*[contains(text(),'BIOLOGY')]")
+    @FindBy(xpath = "//*[contains(text(),'BIOLOGY')]")
     public WebElement biology;
     @FindBy(xpath = "//div[@id='cdk-overlay-9']")
     public WebElement DialogPage;
-    @FindBy (xpath = "//span[@class='fc-icon fc-icon-chevron-left']")
+    @FindBy(xpath = "//span[@class='fc-icon fc-icon-chevron-left']")
     public WebElement leftButton;
     @FindBy(xpath = "//*[contains(text(),'0')]")
     public WebElement pubLesson;
@@ -226,17 +226,17 @@ public class DialogContent extends ParentPage{
     public WebElement payButton;
     @FindBy(id = "Field-numberInput")
     public WebElement cardNumber;
-    @FindBy(id="Field-expiryInput")
+    @FindBy(id = "Field-expiryInput")
     public WebElement expiration;
-    @FindBy(id="Field-cvcInput")
+    @FindBy(id = "Field-cvcInput")
     public WebElement cvc;
     @FindBy(xpath = "//*[@class='stripe-img']")
     public WebElement StripePaymentsButton;
     @FindBy(xpath = "//span[text()=' Student_9 11A']")
     public WebElement studentName;
-    @FindBy (xpath = "//*[contains(text(),'Assignments')]")
+    @FindBy(xpath = "//*[contains(text(),'Assignments')]")
     public WebElement assignments;
-    @FindBy (xpath = "//mat-tooltip-component/div/div")
+    @FindBy(xpath = "//mat-tooltip-component/div/div")
     public WebElement numberOfAssignments;
     @FindBy(xpath = "//mat-select[@id='mat-select-4']")
     public WebElement semester;
@@ -244,83 +244,159 @@ public class DialogContent extends ParentPage{
     public WebElement allOption;
     @FindBy(xpath = "//fa-icon[@matsuffix]")
     public List<WebElement> assignmentsRow;
+    @FindBy(xpath = "//span[text()='Grading']")
+    public WebElement grading;
+    @FindBy(xpath = "//*[text()=' Student Transcript ']")
+    public WebElement studentTranscript;
+    @FindBy(xpath = "//span[text()=' Internship ']")
+    public WebElement internShipText;
+    @FindBy(xpath = "//*[text()=' Transcript By Subject ']")
+    public WebElement transcriptBySubject;
+    @FindBy(xpath = "//*[text()=' Subject ']")
+    public WebElement subjectText;
+    @FindBy(xpath = "//*[text()=' Course Grade ']")
+    public WebElement courseGrade;
+    @FindBy(xpath = "//span[text()=' AVERAGE ']")
+    public WebElement averageText;
 
     public void deleteItem(String deleteName) {
         mySendKeys(searchInput, deleteName);
         myClick(searchButton);
 
-        //search butonun tÄ±klanabilir olana kadar bekle
+        //search butonun tiklanabilir olana kadar bekle
         wait.until(ExpectedConditions.elementToBeClickable(searchButton));
 
         myClick(deleteImageBtn);
         myClick(deleteDialogBtn);
     }
 
-    public WebElement getWebElement(String strElement){
+    public WebElement getWebElement(String strElement) {
 
         switch (strElement) {
-            case "addButton" : return this.addButton;
-            case "nameInput" : return this.nameInput;
-            case "codeInput" : return this.codeInput;
-            case "saveButton" : return this.saveButton;
-            case "shortName" : return this.shortName;
-            case "integrationCode" : return this.integrationCode;
-            case "priorityCode" : return this.priorityCode;
-            case "toggleBar" : return this.toggleBar;
-            case "userType" : return this.userType;
-            case "student" : return this.student;
-            case "administrator" : return this.administrator;
-            case "Trash" : return this.hamburgerTrash;
-            case "trash-restore" : return this.recoveryIcon;
-            case "garbage-box" : return this.garbageIcon;
-            case "Delete" : return this.deleteButton;
-            case "Attendance" : return this.attendanceButton;
-            case "Attendance Excuses" : return this.excuseButton;
-            case "Add Attendance Excuse" : return this.addExcuseButton;
-            case "Date Type" : return this.dateType;
-            case "Full Day" : return this.fullDaySelected;
-            case "Date Range" : return this.dateRangeSelected;
-            case "Attach Files" : return this.attachButton;
-            case "From Local" : return this.fromLocal;
-            case "From My Files" : return this.fromMyFiles;
-            case "From Google Drive" : return this.fromDrive;
-            case "Send" : return this.sendButton;
-            case "Calendar" : return this.calendarMenu;
-            case "P" : return this.pIcon;
-            case "C" : return this.cIcon;
-            case "E" : return this.eIcon;
-            case "S" : return this.sIcon;
-            case "calendarBtn" : return this.calendarButton;
-            case "Weekly Course Plan" : return this.weeklyPlan;
-            case "Backward" : return this.backwardIcon;
-            case "Forward" : return this.forwardIcon;
-            case "Today" : return this.todayIcon;
-            case "1" : return this.lesson1;
-            case "2" : return this.lesson2;
-            case "3" : return this.lesson3;
-            case "4" : return this.lesson4;
-            case "5" : return this.lesson5;
-            case "6" : return this.lesson6;
-            case "7" : return this.lesson7;
-            case "8" : return this.lesson8;
-            case "9" : return this.lesson9;
-            case "10" : return this.lesson10;
-            case "11" : return this.lesson11;
-            case "12" : return this.lesson12;
-            case "13" : return this.lesson13;
-            case "14" : return this.lesson14;
-            case "15" : return this.lesson15;
-            case "16" : return this.lesson16;
-            case "17" : return this.lesson17;
-            case "18" : return this.lesson18;
-            case "19" : return this.lesson19;
-            case "20" : return this.lesson20;
-            case "CompanyLogo" :return this.CompanyLogo;
-            case "Student_image":return this.Student_image;
-            case "StripeButton":return  this.StripeButton;
-            case "payRadio":return  this.payRadio;
-            case "payinFullRadio":return  this.payinFullRadio;
-            case "Assignments" : return this.assignments;
+            case "addButton":
+                return this.addButton;
+            case "nameInput":
+                return this.nameInput;
+            case "codeInput":
+                return this.codeInput;
+            case "saveButton":
+                return this.saveButton;
+            case "shortName":
+                return this.shortName;
+            case "integrationCode":
+                return this.integrationCode;
+            case "priorityCode":
+                return this.priorityCode;
+            case "toggleBar":
+                return this.toggleBar;
+            case "userType":
+                return this.userType;
+            case "student":
+                return this.student;
+            case "administrator":
+                return this.administrator;
+            case "Trash":
+                return this.hamburgerTrash;
+            case "trash-restore":
+                return this.recoveryIcon;
+            case "garbage-box":
+                return this.garbageIcon;
+            case "Delete":
+                return this.deleteButton;
+            case "Attendance":
+                return this.attendanceButton;
+            case "Attendance Excuses":
+                return this.excuseButton;
+            case "Add Attendance Excuse":
+                return this.addExcuseButton;
+            case "Date Type":
+                return this.dateType;
+            case "Full Day":
+                return this.fullDaySelected;
+            case "Date Range":
+                return this.dateRangeSelected;
+            case "Attach Files":
+                return this.attachButton;
+            case "From Local":
+                return this.fromLocal;
+            case "From My Files":
+                return this.fromMyFiles;
+            case "From Google Drive":
+                return this.fromDrive;
+            case "Send":
+                return this.sendButton;
+            case "Calendar":
+                return this.calendarMenu;
+            case "P":
+                return this.pIcon;
+            case "C":
+                return this.cIcon;
+            case "E":
+                return this.eIcon;
+            case "S":
+                return this.sIcon;
+            case "calendarBtn":
+                return this.calendarButton;
+            case "Weekly Course Plan":
+                return this.weeklyPlan;
+            case "Backward":
+                return this.backwardIcon;
+            case "Forward":
+                return this.forwardIcon;
+            case "Today":
+                return this.todayIcon;
+            case "1":
+                return this.lesson1;
+            case "2":
+                return this.lesson2;
+            case "3":
+                return this.lesson3;
+            case "4":
+                return this.lesson4;
+            case "5":
+                return this.lesson5;
+            case "6":
+                return this.lesson6;
+            case "7":
+                return this.lesson7;
+            case "8":
+                return this.lesson8;
+            case "9":
+                return this.lesson9;
+            case "10":
+                return this.lesson10;
+            case "11":
+                return this.lesson11;
+            case "12":
+                return this.lesson12;
+            case "13":
+                return this.lesson13;
+            case "14":
+                return this.lesson14;
+            case "15":
+                return this.lesson15;
+            case "16":
+                return this.lesson16;
+            case "17":
+                return this.lesson17;
+            case "18":
+                return this.lesson18;
+            case "19":
+                return this.lesson19;
+            case "20":
+                return this.lesson20;
+            case "CompanyLogo":
+                return this.CompanyLogo;
+            case "Student_image":
+                return this.Student_image;
+            case "StripeButton":
+                return this.StripeButton;
+            case "payRadio":
+                return this.payRadio;
+            case "payinFullRadio":
+                return this.payinFullRadio;
+            case "Assignments":
+                return this.assignments;
         }
         return null;
     }
@@ -346,6 +422,14 @@ public class DialogContent extends ParentPage{
                 return this.indigoTheme;
             case "saveButton":
                 return this.saveButton;
+            case "grading":
+                return this.grading;
+            case "studentTranscript":
+                return this.studentTranscript;
+            case "transcriptBySubject":
+                return this.transcriptBySubject;
+            case "courseGrade":
+                return this.courseGrade;
         }
 
         return null;

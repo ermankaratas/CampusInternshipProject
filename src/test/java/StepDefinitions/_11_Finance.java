@@ -46,7 +46,7 @@ public class _11_Finance {
     String expiration=strmonth+year;
     dc.mySendKeys(dc.expiration,expiration);
 
-    int cvc=dc.myRandomGenerator(999);
+    int cvc=dc.myRandomGenerator(899) + 100;
     String strcvc=String.valueOf(cvc);
     dc.mySendKeys(dc.cvc,strcvc);
 

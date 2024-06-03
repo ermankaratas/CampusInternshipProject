@@ -53,8 +53,6 @@ public class _11_Finance {
         GWD.getDriver().switchTo().parentFrame();
         dc.myJavaScriptClick(dc.StripePaymentsButton);
 
-
-
     }
 
     @Then("User determines as $ {string} and clicks the pay Button")

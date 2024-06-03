@@ -17,6 +17,7 @@ import java.time.Duration;
 import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
+import java.util.List;
 
 public class ParentPage {
     public WebDriverWait wait = new WebDriverWait(GWD.getDriver(), Duration.ofSeconds(20));
@@ -138,13 +139,11 @@ public class ParentPage {
         Toolkit.getDefaultToolkit().getSystemClipboard().setContents(copyFilepath,null);
     }
 
-   /* public void verifyMenuItems(List<WebElement> elementList, List<String> stringList){
+   public void verifyMenuItems(List<WebElement> elementList, List<String> stringList){
         List<String> actualMenuTexts = new ArrayList<>();
         for (WebElement menuItem : elementList){
             actualMenuTexts.add(menuItem.getText());
         }
         Assert.assertEquals(actualMenuTexts,stringList);
     }
-
-    */
 }

@@ -72,7 +72,7 @@ public class _03_TOPButtonHome {
     public void shouldSeeMessagingFinanceEducationVideoConferenceSurveyd() {
         List<String> stringList = Arrays.asList("Messaging", "Finance", "Education", "Video Conference", "Surveys");
         dc.myClick(tn.hamburgerMenu);
-       // dc.verifyMenuItems(tn.hamburgMenuList, stringList);
+       dc.verifyMenuItems(tn.hamburgMenuList, stringList);
     }
 
     @When("Click Chats button")
@@ -105,6 +105,6 @@ public class _03_TOPButtonHome {
     @Then("Should see My Certificates,My Files,Change Password,Settings,Sign Out")
     public void shouldSeeMyCertificatesMyFilesChangePasswordSettingsSignOut() {
         List<String> stringList = Arrays.asList("My Certificates","My Files","Change Password","Settings","Sign Out");
-     //   dc.verifyMenuItems(tn.profileButtonList,stringList);
+        dc.verifyMenuItems(tn.profileButtonList,stringList);
     }
 }

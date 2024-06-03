@@ -44,26 +44,20 @@ public class DialogContent extends ParentPage{
     public WebElement deleteDialogBtn;
     @FindBy(xpath = "//ms-text-field[@formcontrolname='budgetAccountIntegrationCode']//input")
     public WebElement integrationCode;
-
     @FindBy(xpath = "//ms-integer-field[@formcontrolname='priority']//input")
     public WebElement priorityCode;
-
     @FindBy(xpath = "//mat-slide-toggle[@formcontrolname='active']")
     public WebElement toggleBar;
     @FindBy(xpath = "//mat-chip-list[@formcontrolname='roles' ]//input")
     public WebElement userType;
-
     @FindBy(xpath = "//span[text()=' Student ']")
     public WebElement student;
     @FindBy(xpath = "//span[text()=' Administrator ']")
     public WebElement administrator;
-
     @FindBy(xpath = "//tbody//tr//td[2]")
     public List<WebElement> nameList;
-
     @FindBy(xpath = "(//*[@data-icon='bars'])[1]")
     public WebElement hamburgerMenu;
-
     @FindBy(xpath = "//*[contains(text(),'Messaging')]")
     public WebElement hamburgerMessaging;
     @FindBy(xpath = "//*[contains(text(),'New Message')]")
@@ -194,70 +188,52 @@ public class DialogContent extends ParentPage{
     public WebElement lesson19;
     @FindBy(xpath = "(//td[@class='column100 column1 details ng-star-inserted'])[20]")
     public WebElement lesson20;
-
     @FindBy(xpath = "//div[@class='ng-star-inserted']/img")
     public WebElement CompanyLogo;
-
-
     @FindBy(xpath = "//*[contains(text(),'Students Fees')]")
     public WebElement StudentFees;
-
     @FindBy(xpath = "//*[contains(text(),'Student ID')]")
     public WebElement StudentLine;
-
     @FindBy(xpath = "//*[contains(text(),'Fee/Balance Detail')]")
     public WebElement FeeBalanceDetail;
-
     @FindBy(xpath = "//*[contains(text(),'Date')]")
     public WebElement FinanceTable;
     @FindBy(xpath="//*[contains(text(),'BIOLOGY')]")
     public WebElement biology;
-
     @FindBy(xpath = "//div[@id='cdk-overlay-9']")
     public WebElement DialogPage;
     @FindBy (xpath = "//span[@class='fc-icon fc-icon-chevron-left']")
     public WebElement leftButton;
-
     @FindBy(xpath = "//*[contains(text(),'0')]")
     public WebElement pubLesson;
-
     @FindBy(xpath = "//*[contains(text(),'Recording')]")
     public WebElement Recordingbutton;
-
     @FindBy(xpath = "//*[contains(text(),'Play Video')]")
     public WebElement Playvideo;
-
     @FindBy(xpath = "//*[contains(text(),'Calendar')]")
     public WebElement CalendarMenu;
-
     @FindBy(xpath = "(//tr/td)[9]")
     public WebElement Student_image;
     @FindBy(xpath = "//label[text()='Stripe ']")  //input[@type='radio' and @value='STRIPE']
     public WebElement StripeButton;
-
     @FindBy(xpath = "(//span[text()='Pay'])[1]") //(//span[text()='Pay'])[1]
     public WebElement payRadio;
-
     @FindBy(xpath = "//span[@class='w-50-p discount-class']") ////span[text()='Pay in full $1,729.00 at once.']
     public WebElement payinFullRadio;
-
     @FindBy(xpath = "//input[@placeholder='Amount']")
     public WebElement amountInput;
-
     @FindBy(xpath = "(//span[text()='Pay'])[2]")
     public WebElement payButton;
-
     @FindBy(id = "Field-numberInput")
     public WebElement cardNumber;
-
     @FindBy(id="Field-expiryInput")
     public WebElement expiration;
-
     @FindBy(id="Field-cvcInput")
     public WebElement cvc;
-
     @FindBy(xpath = "//*[@class='stripe-img']")
     public WebElement StripePaymentsButton;
+    @FindBy(xpath = "//span[text()=' Student_9 11A']")
+    public WebElement studentName;
 
     public void deleteItem(String deleteName) {
         mySendKeys(searchInput, deleteName);

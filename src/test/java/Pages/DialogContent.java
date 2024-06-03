@@ -230,6 +230,35 @@ public class DialogContent extends ParentPage{
     @FindBy(xpath = "//*[contains(text(),'Calendar')]")
     public WebElement CalendarMenu;
 
+    @FindBy(xpath = "(//tr/td)[9]")
+    public WebElement Student_image;
+    @FindBy(xpath = "//label[text()='Stripe ']")  //input[@type='radio' and @value='STRIPE']
+    public WebElement StripeButton;
+
+    @FindBy(xpath = "(//span[text()='Pay'])[1]") //(//span[text()='Pay'])[1]
+    public WebElement payRadio;
+
+    @FindBy(xpath = "//span[@class='w-50-p discount-class']") ////span[text()='Pay in full $1,729.00 at once.']
+    public WebElement payinFullRadio;
+
+    @FindBy(xpath = "//input[@placeholder='Amount']")
+    public WebElement amountInput;
+
+    @FindBy(xpath = "(//span[text()='Pay'])[2]")
+    public WebElement payButton;
+
+    @FindBy(id = "Field-numberInput")
+    public WebElement cardNumber;
+
+    @FindBy(id="Field-expiryInput")
+    public WebElement expiration;
+
+    @FindBy(id="Field-cvcInput")
+    public WebElement cvc;
+
+    @FindBy(xpath = "//*[@class='stripe-img']")
+    public WebElement StripePaymentsButton;
+
     public void deleteItem(String deleteName) {
         mySendKeys(searchInput, deleteName);
         myClick(searchButton);
@@ -301,6 +330,10 @@ public class DialogContent extends ParentPage{
             case "19" : return this.lesson19;
             case "20" : return this.lesson20;
             case "CompanyLogo" :return this.CompanyLogo;
+            case "Student_image":return this.Student_image;
+            case "StripeButton":return  this.StripeButton;
+            case "payRadio":return  this.payRadio;
+            case "payinFullRadio":return  this.payinFullRadio;
 
         }
         return null;

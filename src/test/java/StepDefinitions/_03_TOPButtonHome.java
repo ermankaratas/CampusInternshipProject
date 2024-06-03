@@ -103,7 +103,7 @@ public class _03_TOPButtonHome {
     }
 
     @Then("Should see My Certificates,My Files,Change Password,Settings,Sign Out")
-    public void sholdSeeMyCertificatesMyFilesChangePasswordSettingsSignOut() {
+    public void shouldSeeMyCertificatesMyFilesChangePasswordSettingsSignOut() {
         List<String> stringList = Arrays.asList("My Certificates","My Files","Change Password","Settings","Sign Out");
      //   dc.verifyMenuItems(tn.profileButtonList,stringList);
     }

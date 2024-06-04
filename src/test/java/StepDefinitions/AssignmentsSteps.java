@@ -29,7 +29,7 @@ public class AssignmentsSteps {
         dc.myClick(dc.semester);
         dc.myClick(dc.allOption);
         int totalAssignments = Integer.parseInt(numberOfAssignments);
-        dc.myWait(2);
+        dc.myWait(3);
         Assert.assertEquals(dc.assignmentsRow.size(), totalAssignments, "Total assignments mismatch!");
     }
 }

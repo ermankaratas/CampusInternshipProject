@@ -258,6 +258,29 @@ public class DialogContent extends ParentPage {
     public WebElement courseGrade;
     @FindBy(xpath = "//span[text()=' AVERAGE ']")
     public WebElement averageText;
+    @FindBy(xpath = "//*[@data-icon='memo-circle-info']/ancestor::node()[4]")
+    public List<WebElement> homeworks;
+    @FindBy(xpath = "(//button[@mat-icon-button]/span[@class='mat-mdc-focus-indicator'])[4]")
+    public WebElement discussionIcon;
+    @FindBy(xpath = "//ms-standard-button[@icon='users']/button")
+    public WebElement contactsIcon;
+    @FindBy(xpath = "(//user-image)[3]/ancestor::node()[4]")
+    public WebElement personIcon;
+    @FindBy(xpath = "(//ms-icon-button[@icon='paperclip'])[2]")
+    public WebElement attachIcon;
+    @FindBy(css = "textarea")
+    public WebElement textarea;
+    @FindBy(xpath = "//ms-icon-button[@icon='paper-plane']")
+    public WebElement sendIcon;
+    @FindBy(xpath = "(//bdi)[last()]")
+    public WebElement lastMessageInPopup;
+    @FindBy(xpath = "((//bdi)[last()]/ancestor::node()[5]/div)[3]/div")
+    public WebElement dateInPopup;
+    @FindBy(xpath = "//ms-standard-button[@icon='messages']/button")
+    public WebElement chatsIcon;
+    @FindBy(xpath = "(//mat-selection-list/mat-list-option/span/span/div/div)[2]")
+    public WebElement previousDiscuss;
+
 
     public void deleteItem(String deleteName) {
         mySendKeys(searchInput, deleteName);
@@ -397,6 +420,14 @@ public class DialogContent extends ParentPage {
                 return this.payinFullRadio;
             case "Assignments":
                 return this.assignments;
+            case "Discussion":
+                return this.discussionIcon;
+            case "Contacts":
+                return this.contactsIcon;
+            case "Files":
+                return this.attachIcon;
+            case "Chats":
+                return this.chatsIcon;
         }
         return null;
     }

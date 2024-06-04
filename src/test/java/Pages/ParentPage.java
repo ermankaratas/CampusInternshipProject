@@ -85,7 +85,7 @@ public class ParentPage {
         new Actions(GWD.getDriver()).sendKeys(Keys.ESCAPE).build().perform();
     }
 
-    public static int myRandomGenerator(int number) {
+    public int myRandomGenerator(int number) {
         return (int) (Math.random() * number);
     }
 
@@ -148,5 +148,14 @@ public class ParentPage {
 
     public void myDisplay(WebElement element) {
         Assert.assertTrue(element.isDisplayed(), "Notification could not be displayed!");
+    }
+
+    public void myNotFound(WebElement element){
+        try{
+            if(element.isDisplayed())
+                Assert.fail("The element is visible, but it should not be.");
+        }catch (NoSuchElementException e){
+
+        }
     }
 }

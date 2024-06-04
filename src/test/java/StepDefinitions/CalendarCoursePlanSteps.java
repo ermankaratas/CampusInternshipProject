@@ -73,7 +73,7 @@ public class CalendarCoursePlanSteps {
 
     @When("User clicks on the course in the weekly course plan")
     public void userClicksOnTheCourseInTheWeeklyCoursePlan() {
-        int lessonNumber = Pages.ParentPage.myRandomGenerator(20) + 1;
+        int lessonNumber = dc.myRandomGenerator(20) + 1;
         dc.myClick(dc.getWebElement(String.valueOf(lessonNumber)));
     }
 }

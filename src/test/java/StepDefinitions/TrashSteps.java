@@ -30,7 +30,7 @@ public class TrashSteps {
 
     @When("User clicks on the {string} icon")
     public void userClicksOnTheIcon(String iconName) {
-        dc.myClick(dc.getWebElement(iconName));
+        dc.myJavaScriptClick(dc.getWebElement(iconName));
     }
 
     @Then("User gets a confirmation message")

@@ -5,8 +5,8 @@ Feature: Fee functionality
     Then User should login successfully
 
   Scenario:
-    Given User hover over to the Finance link at the Hamburger menu on the homepage
-    When User clicks on the My Finance
+    Given User hover over to the Finance link at the Hamburger menu on homepage
+    When User clicks on My Finance
 
     Then User enters Payment page
     And User selects Provider for Payment

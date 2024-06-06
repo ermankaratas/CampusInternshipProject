@@ -10,12 +10,12 @@ import io.cucumber.java.en.When;
 public class _10_FeeSteps extends GWD {
 
     DialogContent dc = new DialogContent();
-    @Given("User hover over to the Finance link at the Hamburger menu on the homepage")
+    @Given("User hover over to the Finance link at the Hamburger menu on homepage")
     public void userHoverOverToTheFinanceLinkAtTheHamburgerMenuOnTheHomepage() {
         dc.myClick(dc.hamburgerMenu);
         dc.myHover(dc.hamburgerFinance);
     }
-    @When("User clicks on the My Finance")
+    @When("User clicks on My Finance")
     public void UserclicksontheMyFinance() {
         dc.myHover(dc.hamburgerMyFinance);
         dc.myClick(dc.hamburgerMyFinance);

@@ -280,6 +280,18 @@ public class DialogContent extends ParentPage {
     public WebElement chatsIcon;
     @FindBy(xpath = "(//mat-selection-list/mat-list-option/span/span/div/div)[2]")
     public WebElement previousDiscuss;
+    @FindBy(xpath = "//ms-icon-button[@icon='info']/button")
+    public List<WebElement> infoIcon;
+    @FindBy(xpath = "//ms-icon-button[@icon='star']/button")
+    public List<WebElement> favoriteIcon;
+    @FindBy(xpath = "//ms-icon-button[@icon='file-import']/button")
+    public WebElement importIcon;
+    @FindBy(xpath = "//ms-icon-button[@icon='comments-alt']/button")
+    public WebElement commentIcon;
+    @FindBy(xpath = "(//button[@mat-icon-button])[3]")
+    public WebElement returnButton;
+    @FindBy(xpath = "//button[@aria-label='Close dialog']")
+    public WebElement closeButton;
 
 
     public void deleteItem(String deleteName) {
@@ -428,6 +440,10 @@ public class DialogContent extends ParentPage {
                 return this.attachIcon;
             case "Chats":
                 return this.chatsIcon;
+            case "Submit":
+                return this.importIcon;
+            case "Comment":
+                return this.commentIcon;
         }
         return null;
     }
@@ -489,5 +505,15 @@ public class DialogContent extends ParentPage {
 
     @FindBy(xpath = "(//*[contains(text,'successfully')")
     public WebElement confirmationOfDeletion;
+
+    public List<WebElement> getListWebElement(String element){
+        switch(element){
+            case "Info":
+                return this.infoIcon;
+            case "Favorite":
+                return this.favoriteIcon;
+        }
+        return null;
+    }
 
 }

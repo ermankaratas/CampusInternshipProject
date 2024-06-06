@@ -60,16 +60,70 @@ public class DialogContent extends ParentPage {
     public WebElement hamburgerMenu;
     @FindBy(xpath = "//*[contains(text(),'Messaging')]")
     public WebElement hamburgerMessaging;
+    @FindBy(xpath = "//*[contains(text(),'Finance')]")
+    public WebElement hamburgerFinance;
+    @FindBy(xpath = "//*[contains(text(),'My Finance')]")
+    public WebElement hamburgerMyFinance;
+    @FindBy(xpath = "(//student-image)[1]")
+    public WebElement Studentbutton;
+    @FindBy(xpath = "//div[@class='mdc-form-field mat-internal-form-field']/div[@class='mdc-radio']")
+    public WebElement Stripe;
+    @FindBy(xpath = "//mat-radio-button[@class='mat-mdc-radio-button mat-accent ng-star-inserted']//div[@class='mdc-radio']")
+    public WebElement PayinFullButton;
+    @FindBy(xpath = "//input[@id='mat-radio-54-input']")
+    public WebElement Payinput;
+    @FindBy(xpath = "//div[@class='mdc-form-field mat-internal-form-field']/div[@class='mdc-radio']")
+    public WebElement Amountfield;
+    @FindBy(xpath = "//span[contains(text(),'Pay')]")
+    public WebElement Paybutton;
+    @FindBy(xpath = "//div//*[contains(text(),'Student Payment successfully created')]")
+    public WebElement Paymentverify;
+
+    @FindBy(xpath = "//span[contains(text(),'Grading')]")
+    public WebElement Gradingbutton;
+    @FindBy(xpath = "//span[contains(text(),' Student Transcript ')]")
+    public WebElement Studenttranscript;
+    @FindBy(xpath = "//span[contains(text(),'Print')]")
+    public WebElement Studenttranscriptdownload;
+    @FindBy(xpath = "//button[@title='Yazdır (Ctrl+P)']")
+    public WebElement Studenttranscriptprint;
+    @FindBy(xpath = "//span[contains(text(),'Kaydet')]")
+    public WebElement Studenttranscriptsave;
+
+    @FindBy(xpath = "//span[contains(text(),'Course Grade')]")
+    public WebElement coursegrade;
+    @FindBy(xpath = "//faicon[@class='ng-fa-icon ng-star-inserted']//span[@class='mat-mdc-focus-indicator']")
+    public WebElement coursegradedownload;
+    @FindBy(xpath = "//button[@class='c0174 c0189 c0179 c0188 c0163 c0166']")
+    public WebElement coursegradeprint;
+    @FindBy(xpath = "button[@class='c01123 c01146 c01124']")
+    public WebElement coursegradesave;
+
+
+
+    @FindBy(xpath = "//input[@id='Field-numberInput']")
+    public WebElement Cardnumberfield;
+    @FindBy(xpath = "//input[@id='Field-expiryInput']")
+    public WebElement Expirationfield;
+    @FindBy(xpath = "//input[@id='Field-cvcInput']")
+    public WebElement Cvcfield;
+    @FindBy(xpath = "//form[@id='payment-form']")
+    public WebElement paymentbutton;
+    @FindBy(xpath = "//div[@class='mat-badge mat-badge-accent mat-badge-above mat-badge-after mat-badge-small']")
+    public WebElement messagebutton;
+    @FindBy(xpath = "//td[contains(text(),'Mon May 27, 2024 00:18')]")
+    public WebElement paymentstatus;
+    @FindBy(xpath = "//button[@style='background: inherit;']//span[@class='mat-mdc-focus-indicator']")
+    public WebElement paymentstatusbttn;
+    @FindBy(xpath = "//div[contains(text(),'Payment Intent Id : pi_3PKpolLLiYGgcZNg0LjrJjfv')]")
+    public WebElement paymentstatustext;
+
     @FindBy(xpath = "//*[contains(text(),'New Message')]")
     public WebElement hamburgerNewMessage;
     @FindBy(xpath = "//*[contains(text(),'Calendar')]")
     public WebElement calendarMenu;
     @FindBy(xpath = "//*[contains(text(),'Trash')]")
     public WebElement hamburgerTrash;
-    @FindBy(xpath = "//span[text()='Finance']")
-    public WebElement hamburgerFinance;
-    @FindBy(xpath = "//span[text()='My Finance']")
-    public WebElement hamburgerMyFinance;
     @FindBy(xpath = "//span[text()=' Students Fees ']")
     public WebElement studentFees;
     @FindBy(css = "[class='example-full-width full-size example-container-grid'] cdk-virtual-scroll-viewport+div>div>button")

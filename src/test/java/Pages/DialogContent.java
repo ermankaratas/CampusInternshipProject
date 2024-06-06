@@ -465,5 +465,29 @@ public class DialogContent extends ParentPage {
 
         return null;
     }
+    @FindBy(xpath = "//ms-button[@icon='users-medical']/button")
+    public WebElement addReceivers;
+
+
+    @FindBy(xpath = "(//input[@type='checkbox'])[3]")
+    public WebElement checkboxStudent2;
+
+    @FindBy(xpath = "//*[contains(text(),'Add & Close')]")
+    public WebElement buttonAddAndClose;
+
+    @FindBy(xpath = "//*[text()='Outbox']")
+    public WebElement outbox;
+
+    @FindBy(xpath = "(//*[@icon='shopping-basket'])[1]")
+    public WebElement moveToTrash;
+
+    @FindBy(xpath = "//*[@class='cdk-overlay-container']//strong")
+    public WebElement confirmDeleteOutboxMessage;
+
+    @FindBy(xpath = "(//*[@class='cdk-overlay-container']//button)[2]")
+    public WebElement yesDelete;
+
+    @FindBy(xpath = "(//*[contains(text,'successfully')")
+    public WebElement confirmationOfDeletion;
 
 }

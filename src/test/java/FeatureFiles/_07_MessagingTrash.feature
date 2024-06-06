@@ -18,3 +18,6 @@ Feature: Retrieve or permanently delete messages
     When User clicks on the "Delete" button on the pop-up window
     Then User gets a confirmation message
 
+
+
+

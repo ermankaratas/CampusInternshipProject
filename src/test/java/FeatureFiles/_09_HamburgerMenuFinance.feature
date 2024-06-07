@@ -5,7 +5,7 @@ Feature:Finance
     When Enter username and password and click login button
     Then User should login successfully
 
-
+  @Smoke
   Scenario:
     Given User hover over to the Finance link at the Hamburger menu on the homepage
     When User click MyFinance button

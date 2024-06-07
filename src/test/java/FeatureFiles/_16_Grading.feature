@@ -4,8 +4,8 @@ Feature: Grading functionality
     Given Navigate to Campus
     When Enter username and password and click login button
     Then User should login successfully
-
-  Scenario: As a user, I should be able to see reviews about me
+@Grading @Smoke
+Scenario: As a user, I should be able to see reviews about me
     Given Click on the Element in Dialog Content
       | grading           |
       | studentTranscript |

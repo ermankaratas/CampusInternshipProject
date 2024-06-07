@@ -8,7 +8,7 @@ Feature: Assignments discussion functionality
     And User clicks on the "Assignments" menu
     Then User should go to "assignment" page successfully
     And user should see all the assignments
-
+  @Assignment @Smoke
   Scenario:As a student, I should be able to initiate a discussion related to the homework on the assignment submission page.
     When User clicks a random assignment
     Then User should see the discussion icon

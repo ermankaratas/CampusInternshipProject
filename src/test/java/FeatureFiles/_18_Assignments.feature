@@ -5,7 +5,7 @@ Feature: Assignments functionality
     When Enter username and password and click login button
     Then  User should login successfully
 
-
+@Assignment @Smoke
   Scenario:As a student,  I should be able to access all tasks assigned to me from a page.
     When User hovers over the Assignments menu
     Then User should see the total number of Assignments

@@ -8,7 +8,7 @@ Feature: Attendance functionality
     And User clicks "Attendance Excuses" button
     When User clicks "Add Attendance Excuse" button
     Then User should see "New Attendance Excuse" pop-up window
-
+  @Smoke
   Scenario: Excuse with Full Day selection
     Given User choose "Date Type" and select "Full Day"
     And User choose a date 2 days later
@@ -18,7 +18,7 @@ Feature: Attendance functionality
     And User enters the file path: "excuse1.pdf" to the computer
     And User clicks "Send" button
     Then User gets a confirmation message
-
+  @Smoke
   Scenario: Excuse with Date Range selection
     Given User choose "Date Type" and select "Date Range"
     And User choose a date 2 days later for 3 days

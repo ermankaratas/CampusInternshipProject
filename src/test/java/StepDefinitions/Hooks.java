@@ -3,6 +3,8 @@ package StepDefinitions;
 import Utilities.ExcelUtility;
 import Utilities.GWD;
 import io.cucumber.java.*;
+import org.openqa.selenium.OutputType;
+import org.openqa.selenium.TakesScreenshot;
 
 public class Hooks {
     @Before// Cucumber ın Annotation ı
@@ -19,10 +21,10 @@ public class Hooks {
 
         //senaryo fail olduysa ekran kaydı al
         if (senaryo.isFailed()) {
-            // aşağıdaki bölüm sadece extend report plugini devrede ise açılır
-//            TakesScreenshot ts=(TakesScreenshot) GWD.getDriver();
-//            byte[] hafizadakiHali= ts.getScreenshotAs(OutputType.BYTES);
-//            senaryo.attach(hafizadakiHali, "image/png", "screenshot name");
+// aşağıdaki bölüm sadece extend report plugini devrede ise açılır
+            TakesScreenshot ts = (TakesScreenshot) GWD.getDriver();
+            byte[] hafizadakiHali = ts.getScreenshotAs(OutputType.BYTES);
+            senaryo.attach(hafizadakiHali, "image/png", "screenshot name");
         }
 
         GWD.quitDriver();

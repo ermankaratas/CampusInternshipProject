@@ -150,11 +150,11 @@ public class ParentPage {
         Assert.assertTrue(element.isDisplayed(), "Notification could not be displayed!");
     }
 
-    public void myNotFound(WebElement element){
-        try{
-            if(element.isDisplayed())
+    public void myNotFound(WebElement element) {
+        try {
+            if (element.isDisplayed())
                 Assert.fail("The element is visible, but it should not be.");
-        }catch (NoSuchElementException e){
+        } catch (NoSuchElementException e) {
 
         }
     }

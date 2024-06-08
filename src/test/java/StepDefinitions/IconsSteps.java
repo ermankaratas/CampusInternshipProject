@@ -9,6 +9,7 @@ import org.testng.Assert;
 
 public class IconsSteps {
     DialogContent dc = new DialogContent();
+
     @Given("User should see that each assignment has {string} icon")
     public void userShouldSeeThatEachAssignmentHasIcon(String icon) {
         dc.myWait(3);

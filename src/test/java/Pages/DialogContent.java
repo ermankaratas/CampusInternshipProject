@@ -535,6 +535,7 @@ public class DialogContent extends ParentPage {
 
         return null;
     }
+
     @FindBy(xpath = "//ms-button[@icon='users-medical']/button")
     public WebElement addReceivers;
 
@@ -560,8 +561,8 @@ public class DialogContent extends ParentPage {
     @FindBy(xpath = "(//*[contains(text,'successfully')")
     public WebElement confirmationOfDeletion;
 
-    public List<WebElement> getListWebElement(String element){
-        switch(element){
+    public List<WebElement> getListWebElement(String element) {
+        switch (element) {
             case "Info":
                 return this.infoIcon;
             case "Favorite":

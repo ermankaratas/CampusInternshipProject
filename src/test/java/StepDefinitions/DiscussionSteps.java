@@ -53,7 +53,7 @@ public class DiscussionSteps {
         DateTimeFormatter formatter = DateTimeFormatter.ofPattern("EEE MMM d, yyyy HH:mm");
         LocalDateTime dateTime = LocalDateTime.parse(dateString, formatter);
         LocalDate date = dateTime.toLocalDate();
-        Assert.assertEquals(LocalDate.now(),date);
+        Assert.assertEquals(LocalDate.now(), date);
     }
 
     @Then("User should see the previous discussions")

@@ -3,8 +3,7 @@ package StepDefinitions;
 import Utilities.ExcelUtility;
 import Utilities.GWD;
 import io.cucumber.java.*;
-import org.openqa.selenium.OutputType;
-import org.openqa.selenium.TakesScreenshot;
+import org.openqa.selenium.*;
 
 public class Hooks {
     @Before// Cucumber ın Annotation ı

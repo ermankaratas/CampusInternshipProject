@@ -140,8 +140,10 @@ public class DialogContent extends ParentPage {
     public List<WebElement> themeList;
     @FindBy(xpath = "//*[@value='indigo-theme']")
     public WebElement indigoTheme;
-    @FindBy(xpath = "//*[@icon='trash-restore']")
+    @FindBy(xpath = "(//ms-standard-button[@icon='trash-restore'])[1]")
     public WebElement recoveryIcon;
+    @FindBy(xpath = "(//ms-standard-button[@icon='trash-restore'])[1]/button")
+    public WebElement trashIcon;
     @FindBy(xpath = "//ms-delete-button[@table='true']/button")
     public WebElement garbageIcon;
     @FindBy(xpath = "//div[contains(text(),'Do you want to delete')]")
@@ -388,6 +390,8 @@ public class DialogContent extends ParentPage {
                 return this.hamburgerTrash;
             case "trash-restore":
                 return this.recoveryIcon;
+            case "trashRestore":
+                return this.trashIcon;
             case "garbage-box":
                 return this.garbageIcon;
             case "Delete":
@@ -558,7 +562,7 @@ public class DialogContent extends ParentPage {
     @FindBy(xpath = "(//*[@class='cdk-overlay-container']//button)[2]")
     public WebElement yesDelete;
 
-    @FindBy(xpath = "(//*[contains(text,'successfully')")
+    @FindBy(xpath = "(//*[contains(text,'successfully')]")
     public WebElement confirmationOfDeletion;
 
     public List<WebElement> getListWebElement(String element) {

@@ -11,7 +11,7 @@ Feature: Retrieve or permanently delete messages
     When User clicks on the "Trash" menu
     Then User should go to "trash" page successfully
     And User should see the "trash-restore" icon on the page
-    When User clicks on the "trash-restore" icon
+    When User clicks on the "trashRestore" icon
     Then User gets a confirmation message
     When User clicks on the "garbage-box" icon
     Then User should see confirmation message on the pop-up window

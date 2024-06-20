@@ -8,16 +8,16 @@ public class _16_Grading {
 
     @And("User should be able to see transcripts")
     public void userShouldBeAbleToSeeTranscripts() {
-        dc.myVerifyContainsText(dc.internShipText,"Internship");
+        dc.myVerifyContainsText(dc.internShipText, "Internship");
     }
 
     @And("User should be able to see subject")
     public void userShouldBeAbleToSeeSubject() {
-        dc.myVerifyContainsText(dc.subjectText,"Subject");
+        dc.myVerifyContainsText(dc.subjectText, "Subject");
     }
 
     @And("User should be able to see grade")
     public void userShouldBeAbleToSeeGrade() {
-        dc.myVerifyContainsText(dc.averageText,"AVERAGE");
+        dc.myVerifyContainsText(dc.averageText, "AVERAGE");
     }
 }

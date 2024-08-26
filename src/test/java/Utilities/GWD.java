@@ -47,8 +47,12 @@ public class GWD {
                     if (isRunningOnJenkins()) {
                         ChromeOptions options = new ChromeOptions();
                         options.addArguments("--headless", "--no-sandbox", "--disable-dev-shm-usage", "--disable-gpu", "--window-size=1400,2400");
-                    } else
-                        threadDriver.set(new ChromeDriver());
+                        threadDriver.set(new ChromeDriver(options));  // bunu ben ekledim, else dekiyle aynı olsun diye
+                    } else {
+                        ChromeOptions options = new ChromeOptions();  // search engine sorusundan kurtulmak için eklendi
+                        options.addArguments("--disable-search-engine-choice-screen"); // search engine sorusundan kurtulmak için eklendi
+                        threadDriver.set(new ChromeDriver(options));
+                    }
                     break;
                 case "firefox":
                     threadDriver.set(new FirefoxDriver());
